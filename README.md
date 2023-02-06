@@ -1,5 +1,11 @@
 # RoleplayAlphaHeilige
 
+- TypischerKater / Bruno Solf
+- NEYTGH / Nikola Evens
+- engo2002 / Alex Engels
+- MeikelAC / Michel
+- Rafael-R-lcs / Rafael
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
 
 ## Development server
