@@ -1,0 +1,8 @@
+<p>gamemaster-start works!</p>
+<div *ngIf="!loading">
+  <div *ngFor="let raw of map">
+    <div *ngFor="let item of raw">
+      <p>{{ item }}</p>
+    </div>
+  </div>
+</div>
