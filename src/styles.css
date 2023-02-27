@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --main-blue: #3275a8;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif !important;
+}
+.btn {
+  background-color: var(--main-blue);
+  color: white;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: white;
+  padding: 8px
+}
+
+.btn-icon {
+  margin-right: 8px;
+}
+
+.header-icon {
+  margin-right: 8px;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  color: var(--main-blue);
+}
