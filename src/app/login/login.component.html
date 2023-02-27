@@ -1,0 +1,26 @@
+<div class="login-wrapper">
+  <div class="login-container">
+    <div class="login-header-container">
+      <h2>
+        <i class="fa fa-sign-in header-icon"></i>Spiel starten oder beitreten
+      </h2>
+    </div>
+    <div class="login-icon-container">
+      <img class="login-icon" src="assets/login-icons/dungeon.png">
+      <img class="login-icon" src="assets/login-icons/dragon.gif">
+    </div>
+    <div class="login-action-container">
+      <button class="btn" (click)="onCreate()"><i class="fa fa-plus btn-icon"></i>Spiel starten</button>
+      <button class="btn" (click)="onJoin()"><i class="fa fa-arrow-right btn-icon"></i>Spiel beitreten</button>
+    </div>
+  <div *ngIf="isCreateView" class="create-container">
+    <span class="code">{{gameId}}</span>
+  </div>
+  <div *ngIf="isJoinView" class="create-container">
+    <mat-form-field>
+      <mat-label>Spiel-Id eingeben</mat-label>
+      <input matInput class="gameIdInput" required [(ngModel)]="gameIdInput">
+    </mat-form-field>
+  </div>
+</div>
+</div>

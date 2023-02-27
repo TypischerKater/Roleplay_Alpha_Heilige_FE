@@ -1,0 +1,51 @@
+.login-wrapper {
+  background: url("/assets/login_background.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.login-container {
+  height: 50%;
+  width: 480px;
+  border: 2px white solid;
+  border-radius: 8px;
+  background: white;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.login-icon-container {
+  margin-top: 20px;
+}
+
+.login-icon-container img {
+  max-height: 200px;
+}
+
+.login-header-container {
+  margin-top: 40px;
+}
+
+.login-action-container {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn {
+  margin-right: 8px;
+}
+
+.create-icon, .join-icon {
+  margin-right: 8px;
+}
