@@ -5,22 +5,97 @@
         <i class="fa fa-sign-in header-icon"></i>Spiel starten oder beitreten
       </h2>
     </div>
+    <div *ngIf="isJoinView || isCreateView" class="back">
+      <span class="back-to-first" (click)="back()"><i class="fa fa-arrow-left btn-icon"></i>Zurück</span>
+    </div>
     <div class="login-icon-container">
       <img class="login-icon" src="assets/login-icons/dungeon.png">
       <img class="login-icon" src="assets/login-icons/dragon.gif">
     </div>
-    <div class="login-action-container">
+    <div *ngIf="!isCreateView && !isJoinView" class="login-action-container">
       <button class="btn" (click)="onCreate()"><i class="fa fa-plus btn-icon"></i>Spiel starten</button>
       <button class="btn" (click)="onJoin()"><i class="fa fa-arrow-right btn-icon"></i>Spiel beitreten</button>
     </div>
-  <div *ngIf="isCreateView" class="create-container">
-    <span class="code">{{gameId}}</span>
+    <div *ngIf="isCreateView" class="create-container">
+      <span class="code">{{gameId}}</span>
+    </div>
+    <div *ngIf="isJoinView" class="join-container">
+      <mat-stepper [linear]="true" #stepper>
+        <mat-step>
+          <form>
+            <ng-template matStepLabel>Spiel beitreten</ng-template>
+            <mat-form-field>
+              <mat-label>Spiel-ID eingeben</mat-label>
+              <input matInput class="gameIdInput" name="gameId" required [(ngModel)]="gameIdInput">
+            </mat-form-field>
+            <div>
+              <button class="btn" [disabled]="!gameIdInput" mat-button matStepperNext><i class="fa fa-arrow-right btn-icon"></i>Weiter</button>
+            </div>
+          </form>
+        </mat-step>
+        <!-- #docregion label -->
+        <mat-step label="Spieler erstellen">
+          <!-- #enddocregion label -->
+          <form>
+            <mat-form-field appearance="fill">
+              <mat-label>Benutzername</mat-label>
+              <input matInput name="username" required [(ngModel)]="usernameInput">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Typ</mat-label>
+              <!-- TODO: Select-->
+              <input matInput name="username" required [(ngModel)]="typeSelected">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Rasse</mat-label>
+              <!-- TODO: Select-->
+              <input matInput name="username" required [(ngModel)]="raceSelected">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Gesundheit</mat-label>
+              <input matInput name="health" type="number" required [(ngModel)]="healthInput">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Stärke</mat-label>
+              <input matInput name="strength" type="number" required [(ngModel)]="strengthInput">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Intelligenz</mat-label>
+              <input matInput name="intelligence" type="number" required [(ngModel)]="intelligenceInput">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Ausdauer</mat-label>
+              <input matInput name="constitution" type="number" required [(ngModel)]="constitutionInput">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Weisheit</mat-label>
+              <input matInput name="wisdom" type="number" required [(ngModel)]="wisdomInput">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Geschicklichkeit</mat-label>
+              <input matInput name="dexterity" type="number" required [(ngModel)]="dexterityInput">
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Zurück</button>
+              <button class="btn" [disabled]="!isPlayerValid" mat-button matStepperNext><i class="fa fa-arrow-right btn-icon"></i>Weiter</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Bereit?</ng-template>
+          <div class="status-container">
+            <h3 class="status-header" *ngIf="isPlayerValid && !!gameIdInput">Sie sind startklar!</h3>
+            <h3 class="status-header" *ngIf="!isPlayerValid || !gameIdInput">Sie sind noch nicht startklar!</h3>
+            <span class="status"><i *ngIf="!!gameIdInput" class="fa fa-check-circle check-circle"></i><i *ngIf="!gameIdInput" class="fa fa-exclamation-circle exclamation-circle"></i>Spiel-ID</span>
+            <span class="status"><i *ngIf="isPlayerValid" class="fa fa-check-circle check-circle"></i><i *ngIf="!isPlayerValid" class="fa fa-exclamation-circle exclamation-circle"></i>Spieler</span>
+          </div>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button [disabled]="!gameIdInput" class="btn"><i class="fa fa-arrow-right btn-icon"></i>Beitreten</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
+    </div>
   </div>
-  <div *ngIf="isJoinView" class="create-container">
-    <mat-form-field>
-      <mat-label>Spiel-Id eingeben</mat-label>
-      <input matInput class="gameIdInput" required [(ngModel)]="gameIdInput">
-    </mat-form-field>
-  </div>
-</div>
 </div>

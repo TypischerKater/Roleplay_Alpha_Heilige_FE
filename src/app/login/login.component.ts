@@ -12,6 +12,19 @@ export class LoginComponent {
   isJoinView = false;
   gameId = '';
   gameIdInput = '';
+  usernameInput = '';
+  typeSelected = '';
+  raceSelected = '';
+  healthInput = 0;
+  strengthInput = 0;
+  intelligenceInput = 0;
+  constitutionInput = 0;
+  wisdomInput = 0;
+  dexterityInput = 0
+
+  get isPlayerValid(): boolean {
+    return !!this.usernameInput && !!this.typeSelected && !!this.raceSelected && !!this.healthInput && !!this.strengthInput && !!this.intelligenceInput && !!this.constitutionInput && !!this.wisdomInput && !!this.dexterityInput
+  };
 
   constructor(private httpClient: HttpClient) {
   }
@@ -35,6 +48,16 @@ export class LoginComponent {
   }
 
   onJoin() {
+    this.isJoinView = true;
     // TODO
+  }
+
+  join() {
+
+  }
+
+  back() {
+    this.isCreateView = false;
+    this.isJoinView = false;
   }
 }

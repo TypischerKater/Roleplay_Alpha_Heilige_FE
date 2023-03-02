@@ -13,8 +13,8 @@
 }
 
 .login-container {
-  height: 50%;
-  width: 480px;
+  height: fit-content;
+  width: 540px;
   border: 2px white solid;
   border-radius: 8px;
   background: white;
@@ -35,17 +35,76 @@
 }
 
 .login-action-container {
-  height: 30%;
+  height: 80%;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .btn {
   margin-right: 8px;
 }
 
+.btn[disabled] {
+  background-color: lightgray;
+}
+
 .create-icon, .join-icon {
   margin-right: 8px;
 }
+
+.create-container, .join-container {
+  display: inline-grid;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.back {
+  display: flex;
+  justify-content: left;
+  align-self: baseline;
+  margin-left: 12px;
+  color: var(--main-blue);
+  font-size: 11pt;
+}
+
+.exclamation-circle {
+  font-size: 24px;
+  color: red;
+  margin-right: 8px;
+}
+
+.check-circle {
+  font-size: 24px;
+  color: green;
+  margin-right: 8px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+}
+
+.status-container {
+  width: 400px;
+  margin-left: auto;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.status-header {
+  text-align: initial;
+}
+
+:host ::ng-deep  .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+  background-color: var(--main-blue) !important;
+}
+
+:host ::ng-deep .mat-step-header .mat-step-icon-state-edit {
+  background-color: var(--main-blue) !important;
+}
+
+

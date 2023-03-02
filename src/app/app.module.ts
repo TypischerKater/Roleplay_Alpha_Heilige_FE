@@ -7,8 +7,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import {MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserAnimationsModule,
     MatInputModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatStepperModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
